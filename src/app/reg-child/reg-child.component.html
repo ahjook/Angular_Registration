@@ -1,0 +1,29 @@
+<div class="peopleList">
+<table class="table-container table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Password</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of people;let in = index">
+            <td>{{in+ 1}}</td>
+            <td>{{person.name}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.gender}}</td>
+            <td>{{person.address}}</td>
+            <td>{{person.phone}}</td>
+            <td>{{person.password}}</td>
+            <td><button class="button" (click)="onEdit(person)">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

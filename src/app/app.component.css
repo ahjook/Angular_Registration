@@ -1,0 +1,15 @@
+body{
+    background-image: url(https://cdn.allwallpaper.in/wallpapers/640x960/12126/beautiful-blue-background-640x960-wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.toolbar {
+    height: 60px;
+    margin: -8px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }

@@ -1,0 +1,86 @@
+<div class="card1">
+  <h1>REGISTRATION FORM</h1>
+  <p>Fill out the form carefully for registration!</p><hr>
+
+  <form (ngSubmit)="onSubmit(sampleForm);sampleForm.resetForm()" #sampleForm="ngForm">
+    <div class="form-group">
+    <h1>Name:</h1>
+    <input type="text" name="name" [(ngModel)]="Name" required minlength="3" #name="ngModel"  placeholder="Your name...." />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <p>Name is required!</p>
+    </div>
+  </div>
+
+    <div class="form-group">
+    <h1>Email:</h1>
+          <input  type="email" name="email"  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+        [(ngModel)]="EmailAdd" required #email="ngModel"  placeholder="Your email...."/>
+          <div *ngIf="email.invalid && !email.errors.pattern && (email.dirty || email.touched)">
+            <p>Email is required!</p>
+          </div>
+          <div *ngIf="email.errors?.pattern">
+            <p>Email is invalid!</p>
+          </div>
+          
+        </div>
+    
+        <div class="form-group">
+    <h1>Gender:</h1>
+        <select [(ngModel)]="Gender" name="gender" #gender="ngModel" >
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+    
+    <h1>Address: </h1>
+      <input type="text" name="address" [(ngModel)]="Address" required #address="ngModel" placeholder="Your address...."/>
+        <div *ngIf="address.invalid && (address.dirty || address.touched)">
+           <p>Address is required!</p>
+        </div>
+
+    <h1>Phone:</h1>
+        <input type="text" name="phone" [(ngModel)]="Phone" required minlength="11" #phone="ngModel" placeholder="Your phone...."/>
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+          <p>Phone is required!</p>
+        </div>
+        
+       
+
+    <h1>Password:</h1>
+        <input type="password" name="pass" [(ngModel)]="Password" required minlength="8" #pass="ngModel" placeholder="Your password...."/>
+        <div *ngIf="pass.invalid && !pass.errors.minlength &&  (pass.dirty || pass.touched)">
+          <p>Password is required!</p>
+      </div>
+      <div *ngIf="pass.errors?.minlength">
+        <p>Password is  weak!</p>
+    </div>  <br><br><br>
+
+        <button class="button button2" [disabled]=!sampleForm.form.valid>Submit</button>
+      </form>
+  </div>
+<br><br><br>
+<app-reg-child [people]="personList" (personEvent)="getData($event)"></app-reg-child>
+        
+        
+
+
+
+
+
+
+  
+  
+      
+      
+        
+        
+        
+      
+
+
+
+
+
+
+
